@@ -7,6 +7,7 @@ RUN apt-get update
 
 # Add image configuration scripts
 ADD bash_scripts/run.sh /run.sh
+ADD bash_scripts/create_user.sh /create_user.sh
 RUN chmod 755 /*.sh
 
 EXPOSE 22
