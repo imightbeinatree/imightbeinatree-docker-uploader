@@ -4,6 +4,7 @@ MAINTAINER Michael Orr <michael@cloudspace.com>
 RUN apt-get update
 # Install packages
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server
+RUN mkdir /var/run/sshd
 
 # Add image configuration scripts
 ADD bash_scripts/run.sh /run.sh
