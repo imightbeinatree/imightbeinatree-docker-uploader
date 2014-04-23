@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server-5.
 ADD bash_scripts/run.sh /run.sh
 RUN chmod 755 /*.sh
 
-EXPOSE 3306
+EXPOSE 22
 
 # default command - runs shell script controller
 CMD ["/run.sh"]
