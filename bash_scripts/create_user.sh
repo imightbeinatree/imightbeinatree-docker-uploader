@@ -16,9 +16,8 @@ useradd -m -d/home/$1 $1
 echo "=> Creating password $3"
 echo "$1:$3" | chpasswd
 echo "=> Setting Authorized Key $2"
-su  $1 <<'EOF'
-  mkdir -p ~/.ssh
-  echo "$2" >> ~/.ssh/authorized_keys
-EOF
+mkdir -p /home/$1/.ssh
+echo "$2" > /home/$1/.ssh/authorized_keys
+chown -R $1:$1 /home/$1/.ssh
 echo "=> Done!"
 touch /.user_created
