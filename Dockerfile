@@ -13,6 +13,7 @@ RUN chmod 755 /*.sh
 
 ADD config_files/ssh_config /etc/ssh/ssh_config
 ADD config_files/sshd_config /etc/ssh/sshd_config
+RUN sudo service ssh restart
 
 EXPOSE 22
 
