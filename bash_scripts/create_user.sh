@@ -18,7 +18,7 @@ echo "$1:$3" | chpasswd
 echo "=> Setting Authorized Key $2"
 su  $1 <<'EOF'
   mkdir -p ~/.ssh
-  echo $2 >> ~/.ssh/authorized_keys
+  echo "$2" >> ~/.ssh/authorized_keys
 EOF
 echo "=> Done!"
 touch /.user_created
