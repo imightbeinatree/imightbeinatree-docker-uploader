@@ -10,12 +10,14 @@ if [[ $# -eq 3 ]]; then
 	exit 1
 fi
 
-echo "=> Creating user"
+echo "=> Creating user $1"
 useradd -m -d/home/$1 $1
+echo "=> Creating password $3"
 echo "$1:$3" | chpasswd
+echo "=> Setting Authorized Key $2"
 su  $1 <<'EOF'
   mkdir -p ~/.ssh
-  cat $2 >> ~/.ssh/authorized_keys
+  echo $2 >> ~/.ssh/authorized_keys
 EOF
 echo "=> Done!"
 touch /.user_created
