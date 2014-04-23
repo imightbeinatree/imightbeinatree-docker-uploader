@@ -5,7 +5,7 @@ if [ -f /.user_created ]; then
 	exit 0
 fi
 
-if [[ $# -eq 3 ]]; then
+if [[ $# -ne 3 ]]; then
 	echo "Usage: $0 <new_username> <new_public_key> <new_user_pass>"
 	echo "You supplied $# arguments: $0 $1 $2 $3"
 	exit 1
