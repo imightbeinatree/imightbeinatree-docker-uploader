@@ -7,7 +7,7 @@ fi
 
 if [[ $# -eq 3 ]]; then
 	echo "Usage: $0 <new_username> <new_public_key> <new_user_pass>"
-	echo "You supplied: $0 $1 $2 $3"
+	echo "You supplied $# arguments: $0 $1 $2 $3"
 	exit 1
 fi
 
