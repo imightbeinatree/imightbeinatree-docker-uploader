@@ -11,7 +11,8 @@ if [[ $# -eq 3 ]]; then
 fi
 
 echo "=> Creating user"
-useradd -m -d/home/$1 $1 -p `mkpasswd $3`
+useradd -m -d/home/$1 $1
+echo "$1:$3" | chpasswd
 su  $1 <<'EOF'
   mkdir -p ~/.ssh
   cat $2 >> ~/.ssh/authorized_keys
