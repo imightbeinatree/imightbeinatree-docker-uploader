@@ -22,5 +22,6 @@ mkdir -p /home/$1/.ssh
 echo "$2" > /home/$1/.ssh/authorized_keys
 # should this just be /home/$1 ?
 chown -R $1:$1 /home/$1/.ssh
+chown -R $1:$1 /uploads
 echo "=> Done!"
 touch /.user_created
