@@ -1,4 +1,4 @@
-FROM imightbeinatree/sshable
+FROM imightbeinatree/debuggable
 MAINTAINER Michael Orr <michael@cloudspace.com>
 
 # do we also want to install the ssh stuff or do we leave it reliant on the base image?
