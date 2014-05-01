@@ -17,9 +17,15 @@ fi
 
 echo "=> Creating user $1"
 useradd -m -d/home/$1 $1
+
+# user must have a password for ssh login via key to work with this configuration
+echo "=> Setting Random Password for $1"
+RUN echo "$1:$(pwgen -s 12 1)"|chpasswd
+
 echo "=> Setting Authorized Key $2"
 mkdir -p /home/$1/.ssh
 echo "$2" > /home/$1/.ssh/authorized_keys
+
 # should this just be /home/$1 ?
 chown -R $1:$1 /home/$1/.ssh
 chown -R $1:$1 /uploads
